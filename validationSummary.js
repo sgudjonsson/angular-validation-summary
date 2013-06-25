@@ -1,3 +1,6 @@
+
+angular.module("ValidationSummaryModule", []);
+
 /*
 	validation-summary displays a unordered list of visible validation messages
 
@@ -7,7 +10,7 @@
 		<li>Email is not valid</li>
 	</ul>
 */
-angular.module("app").directive("validationSummary", function() {
+angular.module("ValidationSummaryModule").directive("validationSummary", function() {
 	return {
 		restrict: "A",
 		require: "^form",
@@ -50,7 +53,7 @@ angular.module("app").directive("validationSummary", function() {
 	Example:
 	<li validation-message ng-show="sample.email.$error.required">Email is required</li>
 */
-angular.module("app").directive("validationMessage", function() {
+angular.module("ValidationSummaryModule").directive("validationMessage", function() {
 	return {
 		restrict: "A",
 		require: "^form",

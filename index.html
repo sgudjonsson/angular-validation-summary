@@ -3,10 +3,10 @@
 	<head>
 		<title>angular-validation-summary</title>
 	</head>
-	<body ng-app="app">
+	<body ng-app="app" ng-controller="MainController">
 		<form name="sample" novalidate ng-model="user">
 			<h4>Validation summary</h4>
-			<div validation-summary></div>
+			<div validation-summary ng-show="showValidation"></div>
 			<fieldset>
 				<legend>Form</legend>
 				<div>
@@ -30,6 +30,12 @@
 					<ul>
 						<li validation-message ng-show="sample.onlyHelloWorld.$error.validateOnlyHelloWorld">Hello World should only contain "Hello World"</li>
 					</ul>
+			</fieldset>
+		</form>
+		<form>
+			<fieldset>
+				<legend>Actions</legend>
+				<button ng-click="toggleValidationSummary()">Toggle Validation Summary</button>
 			</fieldset>
 		</form>
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
