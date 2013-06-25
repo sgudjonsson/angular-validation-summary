@@ -24,10 +24,17 @@
 						<li validation-message ng-show="sample.email.$error.email">Email is not valid</li>
 					</ul>
 				</div>
+				<div>
+					<label for="onlyHelloWorld">Hello World</label>
+					<input type="text" name="onlyHelloWorld" id="onlyHelloWorld" placeholder="Only 'Hello World'" validate-only-hello-world ng-model="helloWorld" />
+					<ul>
+						<li validation-message ng-show="sample.onlyHelloWorld.$error.validateOnlyHelloWorld">Hello World should only contain "Hello World"</li>
+					</ul>
 			</fieldset>
 		</form>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 		<script src="module.js"></script>
 		<script src="validationSummary.js"></script>
+		<script src="validateOnlyHelloWorld.js"></script>
 	</body>
 </html>
