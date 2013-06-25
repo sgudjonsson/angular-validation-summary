@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>angular-validation-summary</title>
+	</head>
+	<body ng-app="app">
+		<form name="sample" novalidate ng-model="user">
+			<h4>Validation summary</h4>
+			<div validation-summary></div>
+			<fieldset>
+				<legend>Form</legend>
+				<div>
+					<label for="fullname">Fullname</label>
+					<input type="text" name="fullname" id="fullname" placeholder="Fullname" required ng-model="user.fullname" />
+					<ul>
+						<li validation-message ng-show="sample.fullname.$error.required">Fullname is required</li>
+					</ul>
+				</div>
+				<div>
+					<label for="email">Email</label>
+					<input type="email" name="email" id="email" placeholder="Email address" required ng-model="user.email" />
+					<ul>
+						<li validation-message ng-show="sample.email.$error.required">Email is required</li>
+						<li validation-message ng-show="sample.email.$error.email">Email is not valid</li>
+					</ul>
+				</div>
+			</fieldset>
+		</form>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+		<script src="module.js"></script>
+		<script src="validationSummary.js"></script>
+	</body>
+</html>
